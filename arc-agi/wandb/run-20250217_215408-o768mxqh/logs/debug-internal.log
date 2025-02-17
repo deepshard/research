@@ -1,0 +1,15 @@
+{"time":"2025-02-17T21:54:08.427675883Z","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/home/ubuntu/research/arc-agi/wandb/run-20250217_215408-o768mxqh/logs/debug-core.log"}
+{"time":"2025-02-17T21:54:08.634764672Z","level":"INFO","msg":"created new stream","id":"o768mxqh"}
+{"time":"2025-02-17T21:54:08.634805214Z","level":"INFO","msg":"stream: started","id":"o768mxqh"}
+{"time":"2025-02-17T21:54:08.634821566Z","level":"INFO","msg":"writer: Do: started","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:08.634834791Z","level":"INFO","msg":"sender: started","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:08.634843682Z","level":"INFO","msg":"handler: started","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:08.776979844Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-17T21:54:44.048248125Z","level":"INFO","msg":"stream: closing","id":"o768mxqh"}
+{"time":"2025-02-17T21:54:44.048271655Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-17T21:54:44.048954507Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-17T21:54:44.301923093Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-17T21:54:44.389894546Z","level":"INFO","msg":"handler: closed","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:44.38995076Z","level":"INFO","msg":"sender: closed","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:44.389929661Z","level":"INFO","msg":"writer: Close: closed","stream_id":"o768mxqh"}
+{"time":"2025-02-17T21:54:44.390257374Z","level":"INFO","msg":"stream: closed","id":"o768mxqh"}

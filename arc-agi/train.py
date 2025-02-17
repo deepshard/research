@@ -1,6 +1,6 @@
 from datasets import load_dataset
 from transformers import AutoTokenizer
-from trl import GRPOConfig
+from trl import GRPOConfig, GRPOTrainer
 from trainer import TTCGRPOTrainer
 
 from reward import ThinkingCompletionRewardFunction
@@ -50,7 +50,7 @@ def main():
     )
 
     # Initialize trainer
-    trainer = TTCGRPOTrainer(
+    trainer = GRPOTrainer(
         model=model_name,
         reward_funcs=reward_function,
         args=training_args,

@@ -122,11 +122,14 @@ class ThinkingCompletionRewardFunction:
 
     def calculate_reward(self, prompts: List[str], completions: List[str], **kwargs) -> List[float]:
         # Generate final completions using the thinking
-        answers = kwargs.get("answers", [])
-        expected_completions = kwargs.get("expected_completions", [])
         
+        answers = kwargs.get("answers", [])
+        expected_completions = kwargs.get("expected_completions", [])[0]
         # Compute rewards
         rewards = []
+        print("Lengths: ", len(prompts), len(completions), len(answers), len(expected_completions))
+        assert(len(prompts) == len(completions) == len(answers) == len(expected_completions))
+
         for prompt, thoughts, answer, expected in zip(prompts, completions, answers, expected_completions):
             reward = self._compute_reward(answer, expected)
             rewards.append(reward)
@@ -139,4 +142,6 @@ class ThinkingCompletionRewardFunction:
                 expected=expected,
                 reward=reward
             )
+            
+        print("Final reward vector: ", rewards)
         return rewards

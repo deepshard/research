@@ -1,0 +1,24 @@
+Processed prompts: 100%|█| 28/28 [00:08<00:00,  3.49it/s, est. speed input: 15419.71 toks/s, output: 1528.40
+Processed prompts: 100%|█| 28/28 [00:03<00:00,  8.01it/s, est. speed input: 32556.07 toks/s, output: 1764.67
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.25, -0.25, -0.25]
+Processed prompts: 100%|█| 28/28 [00:09<00:00,  2.92it/s, est. speed input: 15784.12 toks/s, output: 1429.77
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.25, -0.25, -0.25]
+Processed prompts: 100%|█| 28/28 [00:05<00:00,  5.43it/s, est. speed input: 19092.64 toks/s, output: 1936.51
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.25, -0.25, -0.25]
+Processed prompts: 100%|█| 28/28 [00:08<00:00,  3.48it/s, est. speed input: 18792.37 toks/s, output: 2265.00
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.1, -0.25, 1.209090909090909]
+Processed prompts: 100%|█| 28/28 [00:09<00:00,  2.81it/s, est. speed input: 14473.18 toks/s, output: 1246.30
+Lengths:  4 4 4 4
+Final reward vector:  [0.0, -0.25, 0.0, -0.25]
+Processed prompts: 100%|█| 28/28 [00:11<00:00,  2.44it/s, est. speed input: 14741.77 toks/s, output: 1007.06
+Lengths:  4 4 4 4
+Final reward vector:  [0.0, 0.0, -0.25, -0.25]
+Token indices sequence length is longer than the specified maximum sequence length for this model (20404 > 16384). Running this sequence through the model will result in indexing errors
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.25, -0.25, -0.25]
+
+Processed prompts:   4%| | 1/28 [00:00<00:09,  2.91it/s, est. speed input: 13354.86 toks/s, output: 34.93 to

@@ -38,7 +38,7 @@ class TTCGRPOTrainer(GRPOTrainer):
             self.sampling_params.stop = ["</think>"]
             outputs = self.llm.generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
             thinking_completions = [out.text for completions in outputs for out in completions.outputs]
-            thinking_prompts = [p + t + "[THINKING TIME UP]\n</think>" for p, t in zip(all_prompts_text, thinking_completions)]
+            thinking_prompts = [p + t + "[THINKING TIME UP]\n</think>" if "</think>" not in t else p+t for p, t in zip(all_prompts_text, thinking_completions)]
     
             # Generate completions using vLLM
             full_outputs = self.llm.generate(
