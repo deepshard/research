@@ -95,7 +95,10 @@ class ThinkingCompletionRewardFunction:
         
         # Get the last grid and apply penalty for multiple grids
         gen_array = all_grids[-1]
-        reward = 0.0 if len(all_grids) == 1 else -0.1
+        if len(all_grids) > 1:
+            return len(all_grids) * -0.02
+        
+        reward = 0
         
         try:
             gen_np = np.array(gen_array)
