@@ -1,0 +1,7 @@
+{"time":"2025-02-17T04:49:33.743536327Z","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/home/ubuntu/research/arc-agi/wandb/run-20250217_044933-95irxarh/logs/debug-core.log"}
+{"time":"2025-02-17T04:49:33.950373575Z","level":"INFO","msg":"created new stream","id":"95irxarh"}
+{"time":"2025-02-17T04:49:33.950413834Z","level":"INFO","msg":"stream: started","id":"95irxarh"}
+{"time":"2025-02-17T04:49:33.95042986Z","level":"INFO","msg":"writer: Do: started","stream_id":"95irxarh"}
+{"time":"2025-02-17T04:49:33.950442069Z","level":"INFO","msg":"handler: started","stream_id":"95irxarh"}
+{"time":"2025-02-17T04:49:33.950459162Z","level":"INFO","msg":"sender: started","stream_id":"95irxarh"}
+{"time":"2025-02-17T04:49:34.058536881Z","level":"INFO","msg":"Starting system monitor"}

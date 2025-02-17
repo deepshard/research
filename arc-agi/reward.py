@@ -2,9 +2,46 @@ import re
 import numpy as np
 from typing import Optional, Union, List
 from vllm.sampling_params import SamplingParams
+import json
+from datetime import datetime
+from pathlib import Path
+from filelock import FileLock
+
+
 
 class ThinkingCompletionRewardFunction:
-    def __init__(self, model, tokenizer, max_completion_tokens: int):
+    def __init__(self, log_dir: str = "logs"):
+        self.log_dir = Path(log_dir)
+        self.log_dir.mkdir(exist_ok=True)
+        self.log_file = self.log_dir / f"rewards_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jsonl"
+        self.file_lock = FileLock(str(self.log_file) + ".lock")
+        
+
+    def log_entry(self, prompt: str, thoughts: str, answer: str, expected: str, reward: float):
+        """
+        Thread-safe logging of reward computation entries to a JSONL file.
+        
+        Args:
+            prompt: The input prompt
+            thoughts: The model's thinking process
+            answer: The model's answer
+            expected: The expected completion
+            reward: The computed reward
+        """
+        entry = {
+            "timestamp": datetime.now().isoformat(),
+            "prompt": prompt,
+            "thoughts": thoughts,
+            "answer": answer,
+            "expected": expected,
+            "reward": reward
+        }
+
+        # Use file lock to ensure thread-safe writing
+        with self.file_lock:
+            with open(self.log_file, "a") as f:
+                json.dump(entry, f)
+                f.write("\n")
 
     def parse_grid(self, text: str) -> list[list[int]]:
         """
@@ -52,11 +89,11 @@ class ThinkingCompletionRewardFunction:
         
         # If no grids found or expected array is None, return 0
         if not all_grids or exp_array is None:
-            return 0.0
+            return -0.25
         
         # Get the last grid and apply penalty for multiple grids
         gen_array = all_grids[-1]
-        reward = 0.0 if len(all_grids) == 1 else -0.25
+        reward = 0.0 if len(all_grids) == 1 else -0.1
         
         try:
             gen_np = np.array(gen_array)
@@ -83,15 +120,23 @@ class ThinkingCompletionRewardFunction:
         
         return reward
 
-    def __call__(self, prompts: List[str], completions: List[str], **kwargs) -> List[float]:
+    def calculate_reward(self, prompts: List[str], completions: List[str], **kwargs) -> List[float]:
         # Generate final completions using the thinking
         answers = kwargs.get("answers", [])
-        expected_completions = kwargs.get("completion", [])
+        expected_completions = kwargs.get("expected_completions", [])
         
         # Compute rewards
         rewards = []
-        for gen_comp, exp_comp in zip(answers, expected_completions):
-            reward = self._compute_reward(gen_comp, exp_comp)
+        for prompt, thoughts, answer, expected in zip(prompts, completions, answers, expected_completions):
+            reward = self._compute_reward(answer, expected)
             rewards.append(reward)
-            
+
+            # Log the entry
+            self.log_entry(
+                prompt=prompt,
+                thoughts=thoughts,
+                answer=answer,
+                expected=expected,
+                reward=reward
+            )
         return rewards

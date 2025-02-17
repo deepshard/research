@@ -1,0 +1,36 @@
+  0%|                                                                               | 0/500 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/ubuntu/research/arc-agi/train.py", line 69, in <module>
+    main()
+  File "/home/ubuntu/research/arc-agi/train.py", line 63, in main
+    trainer.train()
+  File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 3669, in training_step
+    inputs = self._prepare_inputs(inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.venv/lib/python3.12/site-packages/trl/trainer/grpo_trainer.py", line 643, in _prepare_inputs
+    rewards_per_func[:, i] = torch.tensor(output_reward_func, dtype=torch.float32, device=device)
+    ~~~~~~~~~~~~~~~~^^^^^^
+RuntimeError: The expanded size of the tensor (4) must match the existing size (0) at non-singleton dimension 0.  Target sizes: [4].  Tensor sizes: [0]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/ubuntu/research/arc-agi/train.py", line 69, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/ubuntu/research/arc-agi/train.py", line 63, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2171, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ubuntu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 3669, in training_step
+[rank0]:     inputs = self._prepare_inputs(inputs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ubuntu/.venv/lib/python3.12/site-packages/trl/trainer/grpo_trainer.py", line 643, in _prepare_inputs
+[rank0]:     rewards_per_func[:, i] = torch.tensor(output_reward_func, dtype=torch.float32, device=device)
+[rank0]:     ~~~~~~~~~~~~~~~~^^^^^^
+[rank0]: RuntimeError: The expanded size of the tensor (4) must match the existing size (0) at non-singleton dimension 0.  Target sizes: [4].  Tensor sizes: [0]

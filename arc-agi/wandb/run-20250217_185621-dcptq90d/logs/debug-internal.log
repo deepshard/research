@@ -1,0 +1,7 @@
+{"time":"2025-02-17T18:56:21.629040153Z","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/home/ubuntu/research/arc-agi/wandb/run-20250217_185621-dcptq90d/logs/debug-core.log"}
+{"time":"2025-02-17T18:56:21.835890466Z","level":"INFO","msg":"created new stream","id":"dcptq90d"}
+{"time":"2025-02-17T18:56:21.835931512Z","level":"INFO","msg":"stream: started","id":"dcptq90d"}
+{"time":"2025-02-17T18:56:21.83594763Z","level":"INFO","msg":"writer: Do: started","stream_id":"dcptq90d"}
+{"time":"2025-02-17T18:56:21.835965603Z","level":"INFO","msg":"sender: started","stream_id":"dcptq90d"}
+{"time":"2025-02-17T18:56:21.835972342Z","level":"INFO","msg":"handler: started","stream_id":"dcptq90d"}
+{"time":"2025-02-17T18:56:22.007794148Z","level":"INFO","msg":"Starting system monitor"}
