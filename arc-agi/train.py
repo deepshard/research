@@ -21,7 +21,7 @@ def main():
 
     # Training arguments
     training_args = GRPOConfig(
-        output_dir="./arc_agi_grpo_output",
+        output_dir="./ideas_run",
         num_train_epochs=10,
         per_device_train_batch_size=4,
         per_device_eval_batch_size=4,

@@ -33,9 +33,9 @@ def format_prompt(example):
         prompt += f"Output:\n{format_grid(train_example['output'])}\n\n"
     
     # Add the test question
-    prompt += "\nBelow is a test input grid. Predict the corresponding output grid by applying the rule you found. Your final answer should just be the text output grid itself.\n\n"
+    prompt += "\nBelow is a test input grid. Predict the corresponding output grid by applying the rule you found. Keep in mind that your thinking maybe abrubtly terminated with '[THINKING TIME UP]' and so you must answer only with the thinking tokens you have thus far.\n\n"
     prompt += f"Input:\n{format_grid(example['test'][0]['input'])}\n"
-    prompt += "Output:"
+    prompt += "Respond with the corresponding output. You must only respond with the output or you will be penalized for extra tokens. Reinforce the output format via your thinking."
     
     return prompt
 

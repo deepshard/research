@@ -72,6 +72,8 @@ class ThinkingCompletionRewardFunction:
                     main_grid.append(grid)
                     grid = []
                 continue
+        if grid != []:
+            main_grid.append(grid)
         
         return main_grid
 
@@ -127,7 +129,6 @@ class ThinkingCompletionRewardFunction:
         expected_completions = kwargs.get("expected_completions", [])[0]
         # Compute rewards
         rewards = []
-        print("Lengths: ", len(prompts), len(completions), len(answers), len(expected_completions))
         assert(len(prompts) == len(completions) == len(answers) == len(expected_completions))
 
         for prompt, thoughts, answer, expected in zip(prompts, completions, answers, expected_completions):
@@ -142,6 +143,4 @@ class ThinkingCompletionRewardFunction:
                 expected=expected,
                 reward=reward
             )
-            
-        print("Final reward vector: ", rewards)
         return rewards
