@@ -20,5 +20,16 @@ Final reward vector:  [0.0, 0.0, -0.25, -0.25]
 Token indices sequence length is longer than the specified maximum sequence length for this model (20404 > 16384). Running this sequence through the model will result in indexing errors
 Lengths:  4 4 4 4
 Final reward vector:  [-0.25, -0.25, -0.25, -0.25]
-
-Processed prompts:   4%| | 1/28 [00:00<00:09,  2.91it/s, est. speed input: 13354.86 toks/s, output: 34.93 to
+Processed prompts: 100%|█| 28/28 [00:13<00:00,  2.03it/s, est. speed input: 20666.59 toks/s, output: 1269.15
+Processed prompts: 100%|█| 28/28 [00:05<00:00,  4.93it/s, est. speed input: 14293.41 toks/s, output: 2532.90
+Lengths:  4 4 4 4
+Final reward vector:  [-0.1, -0.25, 0.7625, -0.25]
+Processed prompts: 100%|█| 28/28 [00:05<00:00,  4.68it/s, est. speed input: 26166.80 toks/s, output: 2233.45
+Lengths:  4 4 4 4
+Final reward vector:  [0.0, -0.25, -0.1, -0.25]
+Processed prompts: 100%|█| 28/28 [00:06<00:00,  4.62it/s, est. speed input: 21425.36 toks/s, output: 2577.45
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, 0.0, 0.0, 1.205]
+Processed prompts:  82%|▊| 23/28 [00:06<00:01,  2.99it/s, est. speed input: 18088.41 toks/s, output: 1732.48
+Lengths:  4 4 4 4
+Final reward vector:  [-0.25, -0.25, -0.25, -0.1]
